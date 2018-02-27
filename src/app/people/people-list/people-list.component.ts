@@ -53,11 +53,6 @@ export class PeopleListComponent implements OnInit {
     this.peopleService.getAllFromFile()
       .subscribe((res: Person[]) => {
         this.peopleList = res;
-        // let result = res;
-        // result.forEach(element => {
-        //   this.peopleService.peopleCollection.insert(element);
-        // });
-        // this.people = this.peopleService.peopleCollection.chain().simplesort("timestamp").data();
       })
   }
 }

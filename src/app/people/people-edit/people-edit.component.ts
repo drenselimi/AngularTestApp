@@ -26,16 +26,13 @@ export class PeopleEditComponent implements OnInit {
 
   ngOnInit() {
     this.mac = this.route.snapshot.params['mac'];
-    // this.person = this.peopleService.peopleCollection.findObject({mac:this.mac});
     this.person = this.peopleService.getPersonByMac(this.mac);
 
   }
 
   onSave() {
     this.peopleService.udpatePerson(this.person);
-    // this.peopleService.peopleCollection.update(this.person);
     this.router.navigate(['/people']);
-    // this.onBack();
   }
 
   onBack() {

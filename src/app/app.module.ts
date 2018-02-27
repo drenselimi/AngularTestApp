@@ -13,7 +13,6 @@ import {HttpModule} from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { PeopleListComponent } from './people/people-list/people-list.component';
-import { PeopleDetailComponent } from './people/people-detail/people-detail.component';
 import { PeopleEditComponent } from './people/people-edit/people-edit.component';
 import { DatePipe } from '@angular/common';
 
@@ -22,7 +21,6 @@ import { DatePipe } from '@angular/common';
     PeopleComponent,
     AppComponent,
     PeopleCreateComponent,
-    PeopleDetailComponent,
     PeopleEditComponent,
     PeopleListComponent
   ],

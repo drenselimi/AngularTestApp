@@ -9,8 +9,6 @@ declare var require: any;
 var loki = require('lokijs');
 var fs = require("fs");
 
-import * as data from 'people.json';
-
 @Injectable()
 export class PeopleService {
 
@@ -63,16 +61,11 @@ export class PeopleService {
   }
 
   createPerson(person: Person) {
-    // this.peopleCollection.insert({
-    //   'name': person.name,
-    //   'email': person.email,
-    //   'city': person.city,
-    //   'mac': person.mac,
-    //   'timestamp': this.today,
-    //   'creditcard': person.creditcard,
-    // })
-    person.timestamp = this.today;
-    this.peopleCollection.insert(person);
+    var existingPerson = this.getPersonByMac(person.mac);
+    if (!existingPerson) {
+      person.timestamp = this.today;
+      this.peopleCollection.insert(person);
+    }
   }
 
   getPersonByMac(mac: any) {

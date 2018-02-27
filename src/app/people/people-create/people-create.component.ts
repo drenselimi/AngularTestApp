@@ -19,7 +19,7 @@ export class PeopleCreateComponent implements OnInit {
   constructor(
     private router: Router,
     private peopleService: PeopleService
-  ) {  }
+  ) { }
 
   ngOnInit() {
     this.today = new Date();
@@ -27,14 +27,6 @@ export class PeopleCreateComponent implements OnInit {
 
   onSave() {
     this.peopleService.createPerson(this.person);
-    // this.peopleService.peopleCollection.insert({
-    //   'name': this.person.name,
-    //   'email': this.person.email,
-    //   'city': this.person.city,
-    //   'mac': this.person.mac,
-    //   'timestamp': this.today,
-    //   'creditcard': this.person.creditcard,
-    // })
     this.onBack();
   }
 
