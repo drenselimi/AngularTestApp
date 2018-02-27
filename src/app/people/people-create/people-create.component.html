@@ -1,0 +1,40 @@
+<div class="ui-g ui-g-12">
+    <div class="card">
+      <div class="ui-g card-title">
+        <h2>Create Task</h2>
+      </div>
+  
+      <div class="ui-md-3">
+        <label>Name </label>
+        <input pInputText type="text" [(ngModel)]="person.name" name="Name">
+      </div>
+  
+      <div class="ui-md-3">
+        <label>Email</label>
+        <input pInputText type="text" [(ngModel)]="person.email" name="Email">
+      </div>
+
+      <div class="ui-md-3">
+        <label>City</label>
+        <input pInputText type="text" [(ngModel)]="person.city" name="City">
+      </div>
+
+      <div class="ui-md-3">
+        <label>Mac</label>
+        <input pInputText type="text" [(ngModel)]="person.mac" name="Mac">
+      </div>
+
+      <div class="ui-md-3">
+        <label>Creditcard</label>
+        <input pInputText type="text" [(ngModel)]="person.creditcard" name="Creditcard">
+      </div>
+
+      <div class="ui-g-6">
+        <p-button (onClick)="onSave()" label="Save"></p-button>
+      </div>
+      <div class="ui-g-6">
+        <p-button (onClick)="onBack()" label="Back"></p-button>
+      </div>
+
+    </div>
+  </div>

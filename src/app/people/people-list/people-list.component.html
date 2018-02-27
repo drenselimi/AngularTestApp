@@ -1,0 +1,47 @@
+<div class="ui-g ui-fluid">
+  <div class="ui-g ui-g-12">
+
+    <div class="card">
+      
+      <div class="ui-g card-title">
+        <h2>People List</h2>
+      </div>
+
+      <p-dataTable emptyMessage="No records found" [paginator]="true" [value]="peopleList" [rows]="15" [totalRecords]="peopleList.count">
+        <p-column field="name" header="Name"></p-column>
+
+        <p-column field="email" header="Email"></p-column>
+
+        <p-column field="city" header="City"></p-column>
+
+        <p-column field="mac" header="Mac"></p-column>
+
+        <p-column field="timestamp" header="Timestamp">
+          <ng-template let-row="rowData" pTemplate="body">
+            {{row.timestamp | date: 'medium'}}
+          </ng-template>
+        </p-column>
+
+        <p-column field="creditcard" header="Creditcard"></p-column>
+
+        <p-column [style]="{'width':'100px'}" styleClass="col-button" header="Edit">
+          <ng-template let-row="rowData" pTemplate="body">
+            <button type="button" pButton (click)="onEdit(row)" label="Edit" class="detail-btn"></button>
+          </ng-template>
+        </p-column>
+
+        <p-column [style]="{'width':'100px'}" styleClass="col-button" header="Delete">
+          <ng-template let-row="rowData" pTemplate="body">
+            <button type="button" pButton (click)="onDelete(row)" label="Delete" class="detail-btn"></button>
+          </ng-template>
+        </p-column>
+      </p-dataTable>
+
+      <div class="ui-g-12 ui-md-6">
+        <p-button (onClick)="onCreate()" label="Create Person "></p-button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
